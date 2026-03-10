@@ -26,6 +26,36 @@ import {getPluginMetadata} from 'editor_tiny/utils';
 
 import {component, pluginName} from './common';
 
+const loadBootstrap = (doc) => {
+    // Load RequireJS inside the TinyMCE iframe.
+    const requireScript = doc.createElement('script');
+    requireScript.src = M.cfg.wwwroot + '/lib/requirejs/require.js';
+    doc.head.appendChild(requireScript);
+
+    requireScript.onload = function () {
+        const iframeRequire = doc.defaultView.require;
+
+        if (!iframeRequire) {
+            console.error('RequireJS not available in iframe');
+            return;
+        }
+
+        // RequireJS config.
+        const parentConfig = require.s.contexts._.config;
+        iframeRequire.config({
+            baseUrl: parentConfig.baseUrl,
+            paths: parentConfig.paths,
+            map: parentConfig.map || {}
+        });
+
+        // Load Bootstrap.
+        iframeRequire(['theme_boost/index'], function() {
+            console.log('theme_boost/index loaded.');
+        });
+    };
+};
+
+
 // Setup the tiny_injectjs Plugin.
 export default new Promise(async(resolve) => {
     // Note: The PluginManager.add function does not support asynchronous configuration.
@@ -40,6 +70,16 @@ export default new Promise(async(resolve) => {
 
     // Reminder: Any asynchronous code must be run before this point.
     tinyMCE.PluginManager.add(pluginName, (editor) => {
+        console.log('tiny_injectjs_bootstrap plugin loaded');
+        editor.on('init', () => {
+            console.log('[tiny_bootstrap] TinyMCE init event fired');
+            const doc = editor.getDoc();
+            if (!doc) {
+                console.warn('[tiny_bootstrap] Editor document not found');
+                return;
+            }
+            loadBootstrap(doc);
+        });
         // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
         return pluginMetadata;
     });

@@ -14,13 +14,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace tiny_injectjs;
+namespace tiny_injectjs_bootstrap;
 
 use context;
 use editor_tiny\plugin;
 
 /**
- * Tiny Inject JS plugin for Moodle.
+ * Tiny Inject JS Bootstap plugin for Moodle.
  *
  * @package     tiny_injectjs_bootstrap
  * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
