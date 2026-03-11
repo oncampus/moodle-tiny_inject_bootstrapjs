@@ -49,10 +49,37 @@ const loadBootstrap = (doc) => {
         });
 
         // Load Bootstrap.
-        iframeRequire(['theme_boost/index'], function() {
-            console.log('theme_boost/index loaded.');
+        iframeRequire(['jquery', 'popper', 'theme_boost/index'], function($) {
+            console.log('jQuery + popper + theme_boost/index loaded.');
+            activateBootstrapComponents(doc, $);
         });
     };
+};
+
+const activateBootstrapComponents = (doc, $) => {
+    if (!$) {
+        console.warn('Bootstrap initialization skipped: jQuery not available');
+        return;
+    }
+
+    console.log('[bootstrap] initializing components inside TinyMCE iframe');
+
+    // Tooltips
+    $('[data-toggle="tooltip"]', doc).tooltip();
+
+    // Popovers
+    $('[data-toggle="popover"]', doc).popover();
+
+    // Dropdowns
+    $('.dropdown-toggle', doc).dropdown();
+
+    // Collapse
+    $('[data-toggle="collapse"]', doc).collapse();
+
+    // Modal
+    $('[data-toggle="modal"]', doc).modal({show: false});
+
+    console.log('[bootstrap] components initialized');
 };
 
 
