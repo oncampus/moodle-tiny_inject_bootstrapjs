@@ -26,7 +26,7 @@ Wählen Sie eine der folgenden Installationsmethoden:
 
 ### Manuelle Installation
 1. Installieren Sie das Plugin, indem Sie den Inhalt dieses Verzeichnisses in folgendes Verzeichnis kopieren:
-   {your/moodle/dirroot}/lib/editor/tiny/plugins/injectjs_bootstrap
+   {your/moodle/dirroot}/lib/editor/tiny/plugins/inject_bootstrapjs
 2. Melden Sie sich anschließend als Administrator auf Ihrer Moodle-Seite an und gehen Sie zu  
    Site administration > Notifications, um die Installation abzuschließen.
 3. Alternativ können Sie im Moodle-Hauptverzeichnis folgenden Befehl ausführen:

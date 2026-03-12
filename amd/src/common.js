@@ -14,14 +14,14 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Common values helper for the Moodle tiny_injectjs_bootstrap plugin.
+ * Common values helper for the Moodle tiny_inject_bootstrapjs plugin.
  *
- * @module      tiny_injectjs_bootstrap/common
+ * @module      tiny_inject_bootstrapjs/common
  * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-const component = 'tiny_injectjs_bootstrap';
+const component = 'tiny_inject_bootstrapjs';
 
 export default {
     component,

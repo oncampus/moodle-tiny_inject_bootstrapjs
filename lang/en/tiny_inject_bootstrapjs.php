@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     tiny_injectjs_bootstrap
+ * @package     tiny_inject_bootstrapjs
  * @category    string
  * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

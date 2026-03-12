@@ -17,14 +17,14 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     tiny_injectjs_bootstrap
+ * @package     tiny_inject_bootstrapjs
  * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'tiny_injectjs_bootstrap';
+$plugin->component = 'tiny_inject_bootstrapjs';
 $plugin->release = '0.1.0';
 $plugin->version = 2024100700;
 $plugin->requires = 2024100700;

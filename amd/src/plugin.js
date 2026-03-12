@@ -14,9 +14,9 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Tiny tiny_injectjs_bootstrap for Moodle.
+ * Tiny tiny_inject_bootstrapjs for Moodle.
  *
- * @module      tiny_injectjs_bootstrap/plugin
+ * @module      tiny_inject_bootstrapjs/plugin
  * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -83,7 +83,7 @@ const activateBootstrapComponents = (doc, $) => {
 };
 
 
-// Setup the tiny_injectjs Plugin.
+// Setup the inject_bootstrapjs Plugin.
 export default new Promise(async(resolve) => {
     // Note: The PluginManager.add function does not support asynchronous configuration.
     // Perform any asynchronous configuration here, and then call the PluginManager.add function.
@@ -97,12 +97,12 @@ export default new Promise(async(resolve) => {
 
     // Reminder: Any asynchronous code must be run before this point.
     tinyMCE.PluginManager.add(pluginName, (editor) => {
-        console.log('tiny_injectjs_bootstrap plugin loaded');
+        console.log('tiny_inject_bootstrapjs plugin loaded');
         editor.on('init', () => {
             console.log('[tiny_bootstrap] TinyMCE init event fired');
             const doc = editor.getDoc();
             if (!doc) {
-                console.warn('[tiny_bootstrap] Editor document not found');
+                console.warn('[inject_bootstrapjs] Editor document not found');
                 return;
             }
             loadBootstrap(doc);
