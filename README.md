@@ -1,3 +1,4 @@
+[![Moodle Plugin CI](https://github.com/oncampus/moodle-tiny_inject_bootstrapjs/actions/workflows/moodle-plugin-ci.yml/badge.svg)](https://github.com/oncampus/moodle-tiny_inject_bootstrapjs/actions/workflows/moodle-plugin-ci.yml)
 # Inject Bootstrap
 
 Dieses Plugin injiziert das Bootstrap-JS-Framework in den TinyMCE-Editor, sodass Bootstrap-Klassen direkt im Editor verwendet werden können. Dadurch können Inhalte bereits während der Bearbeitung mit Bootstrap-Komponenten und Utility-Klassen gestaltet werden.
