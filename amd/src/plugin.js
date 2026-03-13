@@ -91,14 +91,11 @@ export default new Promise((resolve) => {
                     return;
                 }
                 loadBootstrap(doc);
-                return pluginMetadata;
             });
-            resolve(pluginName);
-            // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
             return pluginMetadata;
         });
-
         resolve(pluginName);
+        return pluginMetadata;
     }).catch((error) => {
         window.console.error("Error during plugin setup:", error);
         resolve([pluginName]);
