@@ -17,7 +17,7 @@
  * Tiny tiny_inject_bootstrapjs for Moodle.
  *
  * @module      tiny_inject_bootstrapjs/plugin
- * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
+ * @copyright   2026 oncampus GmbH <support@oncampus.de>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -36,7 +36,6 @@ const loadBootstrap = (doc) => {
         const iframeRequire = doc.defaultView.require;
 
         if (!iframeRequire) {
-            console.error('RequireJS not available in iframe');
             return;
         }
 
@@ -50,7 +49,6 @@ const loadBootstrap = (doc) => {
 
         // Load Bootstrap.
         iframeRequire(['jquery', 'popper', 'theme_boost/index'], function($) {
-            console.log('jQuery + popper + theme_boost/index loaded.');
             activateBootstrapComponents(doc, $);
         });
     };
@@ -58,12 +56,8 @@ const loadBootstrap = (doc) => {
 
 const activateBootstrapComponents = (doc, $) => {
     if (!$) {
-        console.warn('Bootstrap initialization skipped: jQuery not available');
         return;
     }
-
-    console.log('[bootstrap] initializing components inside TinyMCE iframe');
-
     // Tooltips
     $('[data-toggle="tooltip"]', doc).tooltip();
 
@@ -78,8 +72,6 @@ const activateBootstrapComponents = (doc, $) => {
 
     // Modal
     $('[data-toggle="modal"]', doc).modal({show: false});
-
-    console.log('[bootstrap] components initialized');
 };
 
 
@@ -97,12 +89,9 @@ export default new Promise(async(resolve) => {
 
     // Reminder: Any asynchronous code must be run before this point.
     tinyMCE.PluginManager.add(pluginName, (editor) => {
-        console.log('tiny_inject_bootstrapjs plugin loaded');
         editor.on('init', () => {
-            console.log('[tiny_bootstrap] TinyMCE init event fired');
             const doc = editor.getDoc();
             if (!doc) {
-                console.warn('[inject_bootstrapjs] Editor document not found');
                 return;
             }
             loadBootstrap(doc);

@@ -23,7 +23,7 @@ use editor_tiny\plugin;
  * Tiny Inject JS Bootstap plugin for Moodle.
  *
  * @package     tiny_inject_bootstrapjs
- * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
+ * @copyright   2026 oncampus GmbH <support@oncampus.de>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class plugininfo extends plugin {

@@ -18,7 +18,7 @@
  * Plugin version and other meta-data are defined here.
  *
  * @package     tiny_inject_bootstrapjs
- * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
+ * @copyright   2026 oncampus GmbH <support@oncampus.de>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

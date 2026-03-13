@@ -7,7 +7,7 @@ Das Bootstrap-JS wird in die TinyMCE-Editorumgebung eingebunden, wodurch Bootstr
 
 ### Nutzung
 Stellen Sie sicher, dass das Plugin unter  
-Site administration > Plugins > Text editors > TinyMCE editor > Inject JS Bootstrap  
+Site administration > Plugins > Text editors > TinyMCE editor > Inject Bootstrap JS  
 aktiviert ist.
 
 Nach der Aktivierung steht Bootstrap automatisch im TinyMCE-Editor zur Verfügung.  

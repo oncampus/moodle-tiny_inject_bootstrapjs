@@ -17,7 +17,7 @@
  * Common values helper for the Moodle tiny_inject_bootstrapjs plugin.
  *
  * @module      tiny_inject_bootstrapjs/common
- * @copyright   2026 Yoko Rieger <yoko.rieger@oncampus.de>
+ * @copyright   2026 oncampus GmbH <support@oncampus.de>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
