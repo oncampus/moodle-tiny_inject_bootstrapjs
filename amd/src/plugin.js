@@ -68,7 +68,7 @@ const activateBootstrapComponents = (doc, $) => {
     $('.dropdown-toggle', doc).dropdown();
 
     // Collapse
-    $('[data-toggle="collapse"]', doc).collapse();
+    $('.collapse', doc).collapse({toggle: false});
 
     // Modal
     $('[data-toggle="modal"]', doc).modal({show: false});
