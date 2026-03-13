@@ -32,7 +32,7 @@ const loadBootstrap = (doc) => {
     requireScript.src = M.cfg.wwwroot + '/lib/requirejs/require.js';
     doc.head.appendChild(requireScript);
 
-    requireScript.onload = function () {
+    requireScript.onload = function() {
         const iframeRequire = doc.defaultView.require;
 
         if (!iframeRequire) {
@@ -76,13 +76,13 @@ const activateBootstrapComponents = (doc, $) => {
 
 
 // Setup the inject_bootstrapjs Plugin.
-export default new Promise(async(resolve) => {
+export default new Promise((resolve) => {
     // Note: The PluginManager.add function does not support asynchronous configuration.
     // Perform any asynchronous configuration here, and then call the PluginManager.add function.
     const [
         tinyMCE,
         pluginMetadata,
-    ] = await Promise.all([
+    ] = Promise.all([
         getTinyMCE(),
         getPluginMetadata(component, pluginName),
     ]);
