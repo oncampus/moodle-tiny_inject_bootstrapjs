@@ -79,26 +79,23 @@ const activateBootstrapComponents = (doc, $) => {
 export default new Promise((resolve) => {
     // Note: The PluginManager.add function does not support asynchronous configuration.
     // Perform any asynchronous configuration here, and then call the PluginManager.add function.
-    const [
-        tinyMCE,
-        pluginMetadata,
-    ] = Promise.all([
+    Promise.all([
         getTinyMCE(),
         getPluginMetadata(component, pluginName),
-    ]);
-
-    // Reminder: Any asynchronous code must be run before this point.
-    tinyMCE.PluginManager.add(pluginName, (editor) => {
-        editor.on('init', () => {
-            const doc = editor.getDoc();
-            if (!doc) {
-                return;
-            }
-            loadBootstrap(doc);
+    ]).then(([tinyMCE, pluginMetadata]) => {
+        // Reminder: Any asynchronous code must be run before this point.
+        tinyMCE.PluginManager.add(pluginName, (editor) => {
+            editor.on('init', () => {
+                const doc = editor.getDoc();
+                if (!doc) {
+                    return;
+                }
+                loadBootstrap(doc);
+            });
+            // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
+            return pluginMetadata;
         });
-        // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
-        return pluginMetadata;
-    });
 
-    resolve(pluginName);
+        resolve(pluginName);
+    });
 });
