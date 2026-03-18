@@ -26,3 +26,4 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Inject Bootstrap JS';
+$string['privacy:metadata'] = 'The plugin tiny_inject_bootstrapjs only injects the bootstrapjs into the tiny_MCE Editor. It does not store any personal data.';
