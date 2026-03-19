@@ -48,30 +48,40 @@ const loadBootstrap = (doc) => {
         });
 
         // Load Bootstrap.
-        iframeRequire(['jquery', 'popper', 'theme_boost/index'], function($) {
-            activateBootstrapComponents(doc, $);
+        iframeRequire(['theme_boost/index'], function(bootstrap) {
+            activateBootstrapComponents(doc, bootstrap);
         });
     };
 };
 
-const activateBootstrapComponents = (doc, $) => {
-    if (!$) {
+const activateBootstrapComponents = (doc, bootstrap) => {
+    if (!bootstrap) {
         return;
     }
     // Tooltips
-    $('[data-toggle="tooltip"]', doc).tooltip();
+    doc.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+        new bootstrap.Tooltip(el);
+    });
 
     // Popovers
-    $('[data-toggle="popover"]', doc).popover();
+    doc.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => {
+        new bootstrap.Popover(el);
+    });
 
     // Dropdowns
-    $('.dropdown-toggle', doc).dropdown();
+    doc.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(el => {
+        new bootstrap.Dropdown(el);
+    });
 
     // Collapse
-    $('.collapse', doc).collapse({toggle: false});
+    doc.querySelectorAll('.collapse').forEach(el => {
+        new bootstrap.Collapse(el, {toggle: false});
+    });
 
     // Modal
-    $('[data-toggle="modal"]', doc).modal({show: false});
+    doc.querySelectorAll('.modal').forEach(el => {
+        new bootstrap.Modal(el);
+    });
 };
 
 
