@@ -25,6 +25,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['inject_bootstrapjs:use'] = 'Inject Bootstrap JS useage';
+$string['inject_bootstrapjs:use'] = 'Inject Bootstrap JS Nutzung';
 $string['pluginname'] = 'Inject Bootstrap JS';
-$string['privacy:metadata'] = 'The plugin inject_bootstrapjs only injects the bootstrap logic from theme/boost into the tiny_MCE Editor. It does not store any personal data.';
+$string['privacy:metadata'] = 'Das Plugin inject_bootstrapjs fügt ausschließlich die Bootstrap Logik aus dem theme/boost in den tiny_MCE Editor. Es speichert keinerlei Nutzerdaten.';
