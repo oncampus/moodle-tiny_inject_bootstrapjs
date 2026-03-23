@@ -17,7 +17,7 @@
 /**
  * Plugin Capabilities
  *
- * @package   inject_bootstrapjs
+ * @package   tiny_inject_bootstrapjs
  * @author    Yoko Rieger <yoko.rieger@oncampus.de> based on the work of Tim Martinez <tim.martinez@pembinahills.ca>
  * @copyright   2025 oncampus GmbH <support@oncampus.de>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
