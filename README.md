@@ -33,16 +33,6 @@ Choose one of the following installation methods:
    $ php admin/cli/upgrade.php
    ```
 
-### System Requirements and Dependencies
-This plugin has so far only been tested on Moodle 5.1.
-
-## Known Limitations
-The Plugin only works with the 'TinyMCE editor'.
-It does not work with the 'Atto HTML editor' or the 'Plain text area'.
-
-## Language Support
-No translations are required as the plugin only injects the Bootstrap framework into the editor.
-
 ## License
 2026 oncampus GmbH <support@oncampus.de>
 
@@ -93,16 +83,6 @@ Wählen Sie eine der folgenden Installationsmethoden:
    Site administration > Notifications, um die Installation abzuschließen.
 3. Alternativ können Sie im Moodle-Hauptverzeichnis folgenden Befehl ausführen:
    $ php admin/cli/upgrade.php
-
-### Systemanforderungen und Abhängigkeiten
-Dieses Plugin wurde bisher nur mit Moodle 5.1 getestet.
-
-## Bekannte Einschränkungen
-Dieses Plugin funktioniert ausschließlich mit dem **TinyMCE-Editor**.  
-Es funktioniert nicht mit dem **Atto HTML-Editor** oder dem **Plain text area**.
-
-## Sprachunterstützung
-Es sind keine Übersetzungen erforderlich, da das Plugin lediglich das Bootstrap-Framework in den Editor einbindet.
 
 ## Lizenz
 2026 oncampus GmbH <support@oncampus.de>
